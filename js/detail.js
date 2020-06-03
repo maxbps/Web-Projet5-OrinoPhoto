@@ -1,9 +1,18 @@
 let params = (new URL(document.location)).searchParams
 let id = params.get('produit')
-let index = 0
+let indexDropDown = 0
 
+function active(index) {
+    for (var iter = 0;; iter++) {
+        console.log(iter)
+        const inactive = document.getElementById(iter)
+        inactive.classList.remove('active')
+        if (iter == indexDropDown) break
+    }
+    const active = document.getElementById(index)
+    active.classList.add('active')
+}
 
-// L'appel à la fonction peut se faire de cette manière là
 request('http://localhost:3000/api/cameras/' + id)
     .then(function(response) {
         const detail = document.querySelector("#detail")
@@ -41,10 +50,9 @@ request('http://localhost:3000/api/cameras/' + id)
 
         const selectLenses = document.querySelector("#selector")
         for (let i in lenses) {
-            selectLenses.innerHTML += `<a class="dropdown-item inactive">${lenses[i]}</a>`
+            indexDropDown = i
+            selectLenses.innerHTML += `<a onClick='active(${i})' id='${i}'class="dropdown-item">${lenses[i]}</a>`
         }
-
-
 
         const success = document.querySelector("#success")
         document.getElementById("buyButton").addEventListener('click', function() {
@@ -52,7 +60,6 @@ request('http://localhost:3000/api/cameras/' + id)
             The product has been added to cart.<a href="cart.html" class="alert-link">You can access you cart now </a>!
             </div>`
         })
-
 
     }).catch(function(error) {
         console.error(error)
