@@ -20,7 +20,8 @@ request('http://localhost:3000/api/cameras/' + id)
         const name = response.name
         const price = response.price
         const lenses = response.lenses
-        let id = response.id
+        const id = response.id
+        let alreadyBuy = false
 
         detail.innerHTML +=
 
@@ -56,9 +57,16 @@ request('http://localhost:3000/api/cameras/' + id)
 
         const success = document.querySelector("#success")
         document.getElementById("buyButton").addEventListener('click', function() {
-            success.innerHTML += `<div class="alert alert-success" role="alert">
+            if (alreadyBuy == false) {
+                alreadyBuy = true
+                success.innerHTML = `<div class="alert alert-success" role="alert">
             The product has been added to cart.<a href="cart.html" class="alert-link">You can access you cart now </a>!
             </div>`
+            } else {
+                success.innerHTML = `<div class="alert alert-danger" role="alert">
+                You have already buy this item.<a href="cart.html" class="alert-link">You can access you cart now </a>!
+                </div>`
+            }
         })
 
     }).catch(function(error) {
