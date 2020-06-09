@@ -66,14 +66,18 @@ request('http://localhost:3000/api/cameras/' + id)
             </div>`
 
 
-                var myProduct = {
-                    id: id,
-                    name: name,
-                    imageUrl: imageUrl,
-                    price: price
-                }
-                var myProduct_json = JSON.stringify(myProduct);
-                localStorage.product = myProduct_json
+                let product = new Product(id, name, price, imageUrl)
+                addProduct(product)
+
+
+                // var myProduct = {
+                //     id: id,
+                //     name: name,
+                //     imageUrl: imageUrl,
+                //     price: price
+                // }
+                // var myProduct_json = JSON.stringify(myProduct);
+                // localStorage.product = myProduct_json
 
 
             } else {
