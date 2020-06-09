@@ -7,6 +7,8 @@ function active(index) {
         console.log(iter)
         const inactive = document.getElementById(iter)
         inactive.classList.remove('active')
+
+        // a enlever!
         if (iter == indexDropDown) break
     }
     const active = document.getElementById(index)
@@ -62,6 +64,18 @@ request('http://localhost:3000/api/cameras/' + id)
                 success.innerHTML = `<div class="alert alert-success" role="alert">
             The product has been added to cart.<a href="cart.html" class="alert-link">You can access you cart now </a>!
             </div>`
+
+
+                var myProduct = {
+                    id: id,
+                    name: name,
+                    imageUrl: imageUrl,
+                    price: price
+                }
+                var myProduct_json = JSON.stringify(myProduct);
+                localStorage.product = myProduct_json
+
+
             } else {
                 success.innerHTML = `<div class="alert alert-danger" role="alert">
                 You have already buy this item.<a href="cart.html" class="alert-link">You can access you cart now </a>!
