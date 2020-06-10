@@ -13,3 +13,11 @@ footer {
 body {
     background-color: #F6F6F6;
 }
+
+.mybox {
+    border-style: solid;
+    border-color: grey;
+    border-radius: 20px;
+    padding: 10px;
+    margin: 50px;
+}

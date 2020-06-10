@@ -65,20 +65,8 @@ request('http://localhost:3000/api/cameras/' + id)
             The product has been added to cart.<a href="cart.html" class="alert-link">You can access you cart now </a>!
             </div>`
 
-
                 let product = new Product(id, name, price, imageUrl)
                 addProduct(product)
-
-
-                // var myProduct = {
-                //     id: id,
-                //     name: name,
-                //     imageUrl: imageUrl,
-                //     price: price
-                // }
-                // var myProduct_json = JSON.stringify(myProduct);
-                // localStorage.product = myProduct_json
-
 
             } else {
                 success.innerHTML = `<div class="alert alert-danger" role="alert">

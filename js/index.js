@@ -1,4 +1,3 @@
-// L'appel à la fonction peut se faire de cette manière là
 request('http://localhost:3000/api/cameras')
     .then(function(response) {
         const produits = document.querySelector("#product")
