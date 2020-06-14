@@ -59,31 +59,31 @@
 
         <!-- Bootstrap documentation : https://getbootstrap.com/docs/4.0/components/forms/
         Pattern documentation : https://www.w3schools.com/TAGS/att_input_pattern.asp -->
-        <form class="mybox shadow">
+        <form class="mybox shadow" onsubmit="return postRequest()">
             <div class="form-row justify-content-center">
                 <div class="col-md-5 my-2">
-                    <label for="validationServer01">First name</label>
-                    <input type="text" pattern="[a-z-'éèA-Z]{3,32}" class="form-control" id="validationServer01" placeholder="First name" required>
+                    <label for="firstName">First name</label>
+                    <input type="text" pattern="[a-z-'éèA-Z]{3,32}" class="form-control" id="firstName" placeholder="First name" required>
                 </div>
                 <div class="col-md-5 my-2">
-                    <label for="validationServer02 ">Last name</label>
-                    <input type="text " pattern="[a-z-'éèA-Z]{3,32}" class="form-control" id="validationServer02 " placeholder="Last name " required>
+                    <label for="lastName">Last name</label>
+                    <input type="text " pattern="[a-z-'éèA-Z]{3,32}" class="form-control" id="lastName" placeholder="Last name " required>
                 </div>
                 <div class="col-md-5 my-2">
-                    <label for="validationServer03 ">Adress</label>
-                    <input type="text" pattern="[0-9 'éèa-zA-Z]+" class="form-control" id="validationServer03 " placeholder="Adress " required>
+                    <label for="adress">Adress</label>
+                    <input type="text" pattern="[0-9 'éèa-zA-Z]+" class="form-control" id="adress" placeholder="Adress " required>
                 </div>
                 <div class="col-md-5 my-2">
-                    <label for="validationServer03 ">City</label>
-                    <input type="text " pattern="[a-z-'éèA-Z]{3,32}" class="form-control" id="validationServer03 " placeholder="City " required>
+                    <label for="city">City</label>
+                    <input type="text " pattern="[a-z-'éèA-Z]{3,32}" class="form-control" id="city" placeholder="City " required>
                 </div>
                 <div class="col-md-5 my-2">
-                    <label for="validationServer05 ">email</label>
-                    <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" id="validationServer05 " placeholder="email" " required>
+                    <label for="email">email</label>
+                    <input type="text" pattern="[a-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,}$" class="form-control" id="email" placeholder="email" required>
                 </div>
             </div>
             <div class="text-center my-2 ">
-            <button class="btn btn-primary " type="submit ">Submit form</button>
+                <button class="btn btn-primary " type="submit ">Commandez</button>
             </div>
         </form>
 

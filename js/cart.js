@@ -25,3 +25,30 @@ function loadView() {
 }
 
 loadView()
+
+function postRequest() {
+
+    const firstName = document.getElementById('firstName').value
+    const lastName = document.getElementById('lastName').value
+    const address = document.getElementById('adress').value
+    const city = document.getElementById('city').value
+    const email = document.getElementById('email').value
+
+    const user = new User(firstName, lastName, address, city, email)
+
+    load()
+
+    var ids = []
+    for (var i = 0; i < products.length; i++) {
+        var id = products[i].id
+        ids.push(id)
+    }
+
+    const command = new Command(user, ids)
+
+    post(command)
+
+
+    return false
+
+}

@@ -23,5 +23,4 @@ request('http://localhost:3000/api/cameras')
         }
     }).catch(function(error) {
         console.error(error)
-            // Le serveur n'a pas répondu comme attendu
     })

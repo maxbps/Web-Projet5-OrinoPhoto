@@ -22,7 +22,7 @@ request('http://localhost:3000/api/cameras/' + id)
         const name = response.name
         const price = response.price
         const lenses = response.lenses
-        const id = response.id
+        const id = response._id
         let alreadyBuy = false
 
         detail.innerHTML +=
