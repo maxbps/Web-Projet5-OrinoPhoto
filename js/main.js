@@ -41,6 +41,7 @@ var post = function(command) {
                 if (xhr.status === 201) {
                     var response = JSON.parse(xhr.responseText)
                     localStorage.setItem("confirm", response.orderId)
+                    isCommandEmpty()
                     resolve(JSON.parse(xhr.responseText))
                     window.location.href = "confirmation.html"
                 } else {
@@ -52,4 +53,14 @@ var post = function(command) {
         xhr.setRequestHeader("Content-Type", "application/json")
         xhr.send(JSON.stringify(command))
     })
+}
+
+
+var isCommandEmpty = function() {
+    let products = localStorage.getItem('products')
+    if (products.length === 2) {
+        localStorage.setItem("isCommandEmpty", true)
+    } else {
+        localStorage.setItem("isCommandEmpty", false)
+    }
 }
