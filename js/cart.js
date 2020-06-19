@@ -48,6 +48,7 @@ function postRequest() {
 
     post(command)
 
+    //onsubmit must have a return otherwise .onreadystatechange is useless
     return false
 
 }

@@ -8,25 +8,21 @@ class Product {
     }
 }
 
-
 function load() {
     let jsonObject = localStorage.getItem('products')
     products = JSON.parse(jsonObject)
-}
-
-function addProduct(product) {
-    loadProducts()
-    products.push(product);
-    localStorage.setItem('products', JSON.stringify(products))
-}
-
-function loadProducts() {
-    let json = localStorage.getItem('products')
-    products = JSON.parse(json)
     if (products == null) {
         empty()
     }
 }
+
+function addProduct(product) {
+    load()
+    products.push(product);
+    localStorage.setItem('products', JSON.stringify(products))
+}
+
+
 
 function empty() {
     products = []
