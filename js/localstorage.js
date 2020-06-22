@@ -18,11 +18,9 @@ function load() {
 
 function addProduct(product) {
     load()
-    products.push(product);
+    products.push(product)
     localStorage.setItem('products', JSON.stringify(products))
 }
-
-
 
 function empty() {
     products = []

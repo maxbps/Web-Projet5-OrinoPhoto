@@ -1,4 +1,4 @@
-request('http://localhost:3000/api/cameras')
+get('http://localhost:3000/api/cameras')
     .then(function(response) {
         const produits = document.querySelector("#product")
         for (let i = 0; i < response.length; i++) {

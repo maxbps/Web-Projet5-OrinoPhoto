@@ -39,8 +39,8 @@ function postRequest() {
     load()
 
     var ids = []
-    for (var i = 0; i < products.length; i++) {
-        var id = products[i].id
+    for (let i = 0; i < products.length; i++) {
+        let id = products[i].id
         ids.push(id)
     }
 

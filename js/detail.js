@@ -3,19 +3,17 @@ let id = params.get('produit')
 let indexDropDown = 0
 
 function active(index) {
-    for (var iter = 0;; iter++) {
+    for (let iter = 0; iter < indexDropDown; iter++) {
         console.log(iter)
         const inactive = document.getElementById(iter)
         inactive.classList.remove('active')
-
-        // a enlever!
-        if (iter == indexDropDown) break
+            // if (iter == indexDropDown) break
     }
     const active = document.getElementById(index)
     active.classList.add('active')
 }
 
-request('http://localhost:3000/api/cameras/' + id)
+get('http://localhost:3000/api/cameras/' + id)
     .then(function(response) {
         const detail = document.querySelector("#detail")
         const imageUrl = response.imageUrl

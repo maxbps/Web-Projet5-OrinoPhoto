@@ -16,7 +16,7 @@ class User {
 }
 
 //source: https://www.grafikart.fr/tutoriels/promise-async-await-875
-var request = function(url) {
+var get = function(url) {
     return new Promise(function(resolve, reject) {
         var xhr = new window.XMLHttpRequest()
         xhr.onreadystatechange = function() {
@@ -39,7 +39,7 @@ var post = function(command) {
         xhr.onreadystatechange = function() {
             if (xhr.readyState === 4) {
                 if (xhr.status === 201) {
-                    var response = JSON.parse(xhr.responseText)
+                    let response = JSON.parse(xhr.responseText)
                     localStorage.setItem("confirm", response.orderId)
                     isCommandEmpty()
                     resolve(JSON.parse(xhr.responseText))
