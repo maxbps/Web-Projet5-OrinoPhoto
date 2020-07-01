@@ -3,11 +3,11 @@ let id = params.get('produit')
 let indexDropDown = 0
 
 function active(index) {
-    for (let iter = 0; iter < indexDropDown; iter++) {
+    for (let iter = 0;; iter++) {
         console.log(iter)
         const inactive = document.getElementById(iter)
         inactive.classList.remove('active')
-            // if (iter == indexDropDown) break
+        if (iter == indexDropDown) break
     }
     const active = document.getElementById(index)
     active.classList.add('active')
@@ -42,7 +42,8 @@ get('http://localhost:3000/api/cameras/' + id)
                         </div>
                         <a id="buyButton" class="btn btn-outline-dark my-3" role="button" aria-pressed="true">Buy It!</a>
                         </div>
-                </div>
+                    </div>
+
                 <div id="success">
                 </div>
                         
